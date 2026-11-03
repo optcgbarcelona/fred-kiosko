@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FRED Café &amp; Kiosko</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Fred, el kiosko de Nàpols 227: café, prensa, cartas y lo más viral de TikTok. Reserva las novedades y compra online.">
+<meta name="description" content="Fred, el kiosko de Nàpols 227: café, prensa, cartas y lo más viral de TikTok. Reserva las novedades, compra online y gasta 20 € para llevarte el café gratis.">
 <meta property="og:title" content="FRED · Not your average kiosk">
-<meta property="og:description" content="Café, prensa, cartas y cosas virales en Nàpols 227, Barcelona. Reserva las novedades antes de que vuelen.">
+<meta property="og:description" content="Café, prensa, cartas y cosas virales en Nàpols 227, Barcelona. Gasta 20 € y el café va por nosotros.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/og.jpg">
 <meta name="theme-color" content="#FF0000">
@@ -16,11 +16,13 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p class="demo-bar">Versión demo · las reservas y los pagos son de prueba</p>
 
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a class="nav__logo" href="#top" aria-label="Fred, inicio"><img src="assets/img/logo-bubble-inv.webp" alt="FRED" width="900" height="255"></a>
+    <a class="nav__logo" href="#top" aria-label="Fred, inicio">
+      <img class="nav__logo-w" src="assets/img/logo-bubble-inv.webp" alt="FRED" width="900" height="255">
+      <img class="nav__logo-r" src="assets/img/logo-bubble.webp" alt="" width="900" height="255">
+    </a>
     <nav class="nav__links" aria-label="Secciones">
       <a href="#novedades">Novedades</a>
       <a href="#tienda">Tienda</a>
@@ -35,55 +37,52 @@
 </header>
 
 <main id="top">
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__in">
+  <!-- 1 · HOME (style frame v1) -->
+  <section class="hero" data-nav="red" aria-labelledby="hero-title">
+    <div class="hero__box">
       <img class="hero__logo" src="assets/img/logo-bubble-inv.webp" alt="" width="900" height="255">
       <h1 id="hero-title" class="hero__claim">Not your<br>average kiosk</h1>
       <p class="hero__sub">Café · prensa · cartas · cosas virales<br>Carrer de Nàpols 227 · Barcelona</p>
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ringpath" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><circle cx="50" cy="50" r="49" fill="#FFFF00"/><text font-family="Alfa Slab One, Georgia, serif" font-size="11.5" fill="#FF0000" letter-spacing="1.5"><textPath href="#ringpath">MÉS QUE UN KIOSK ✺ MÉS QUE UN KIOSK ✺</textPath></text><circle cx="50" cy="50" r="16" fill="#FF0000"/></svg>
+      <div class="hero__circle" aria-hidden="true"></div>
+      <img class="guy guy--l" src="assets/img/guy-left.webp" alt="" width="627" height="899">
+      <img class="guy guy--r" src="assets/img/guy-right.webp" alt="" width="584" height="900">
       <div class="hero__ctas">
-        <a class="btn btn--white" href="#novedades">★ Novedades de la semana</a>
+        <a class="btn btn--red btn--ring" href="#novedades">★ Novedades</a>
         <a class="btn btn--yellow" href="#tienda">Ver la tienda →</a>
       </div>
     </div>
-    <div class="hero__stage" aria-hidden="true">
-      <svg class="ring" viewBox="0 0 100 100"><defs><path id="ringpath" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><circle cx="50" cy="50" r="49" fill="#FFFF00"/><text font-family="Alfa Slab One, Georgia, serif" font-size="11.5" fill="#FF0000" letter-spacing="1.5"><textPath href="#ringpath">MÉS QUE UN KIOSK ✺ MÉS QUE UN KIOSK ✺</textPath></text><circle cx="50" cy="50" r="16" fill="#FF0000"/></svg>
-      <div class="hero__circle"></div>
-      <img class="guy guy--l" src="assets/img/guy-left.webp" alt="" width="627" height="899">
-      <img class="guy guy--r" src="assets/img/guy-right.webp" alt="" width="584" height="900">
-    </div>
+    <div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
   </section>
 
-  <div class="ticker-clip" aria-hidden="true"><div class="ticker"><div class="ticker__track" id="ticker"></div></div></div>
-
-  <!-- NOVEDADES -->
-  <section class="novs" id="novedades" aria-labelledby="nov-title">
+  <!-- 2 · NOVEDADES (layout del "Pide tu café" v1) -->
+  <section class="novs" id="novedades" data-nav="red" aria-labelledby="nov-title">
     <div class="novs__head">
       <div class="wrap novs__head-in">
-        <div>
-          <h2 id="nov-title" class="big">Recién<br>llegado</h2>
-          <p class="lede">Lo que acaba de entrar en el kiosko. Resérvalo antes de que vuele: te lo guardamos 48 horas y pagas al recoger.</p>
-          <p class="live"><i></i><span id="nov-updated">Actualizado hace 12 min</span></p>
-        </div>
-        <img class="novs__fran" src="assets/img/fran-head.webp" alt="" width="900" height="859">
+        <h2 id="nov-title" class="slab novs__title">Recién<br>llegado</h2>
+        <p class="novs__lede">Lo nuevo del kiosko. Resérvalo: te lo guardamos 48 h y pagas al recoger.</p>
+        <img class="novs__mug" src="assets/img/mug-logo-inv.webp" alt="" width="900" height="661">
       </div>
     </div>
-    <div class="wrap">
-      <article class="feat" id="feat"></article>
-      <h3 class="mid">Esta semana</h3>
-      <ul class="rail" id="rail"></ul>
+    <div class="wrap novs__body" data-nav="white">
+      <div class="steps" aria-hidden="true"><span class="on">1 · Elige</span><span id="step2">2 · Reserva</span><span>3 · Recoge en 48 h</span></div>
+      <ul class="menu" id="menu"></ul>
+      <div class="novs__foot">
+        <div class="progbox" id="nov-prog"></div>
+        <button class="btn btn--red btn--split" type="button" id="nov-btn" disabled><span>Reservar · 48 h</span><span class="slab" id="nov-btn-t">0,00 €</span></button>
+      </div>
     </div>
   </section>
 
-  <!-- TIENDA -->
-  <section class="shop" id="tienda" aria-labelledby="shop-title">
+  <!-- 3 · TIENDA (style frame v1) -->
+  <section class="shop" id="tienda" data-nav="white" aria-labelledby="shop-title">
     <div class="wrap">
-      <div class="shop__head">
+      <div class="shop__title">
         <div>
-          <h2 id="shop-title" class="big">La<br>tienda</h2>
-          <p class="lede">Lo que ves en TikTok, en el kiosko de tu barrio. Recógelo en Nàpols o te lo mandamos a casa.</p>
+          <h2 id="shop-title" class="slab shop__h">La<br>tienda</h2>
+          <p class="shop__lede">Lo que ves en TikTok, en el kiosko de tu barrio.</p>
         </div>
-        <img class="shop__eddie" src="assets/img/eddie-head.webp" alt="" width="703" height="900">
+        <img class="shop__fran" src="assets/img/fran-head.webp" alt="" width="900" height="859">
       </div>
       <div class="tabs" id="tabs" role="tablist" aria-label="Categorías"></div>
       <ul class="grid" id="grid"></ul>
@@ -91,11 +90,11 @@
   </section>
 
   <!-- REVISTAS -->
-  <section class="mags" id="revistas" aria-labelledby="mags-title">
+  <section class="mags" id="revistas" data-nav="red" aria-labelledby="mags-title">
     <div class="wrap mags__in">
-      <div class="mags__pic"><span class="circ circ--big"><img class="ph" src="assets/photo/revistas.webp" alt="Revistas independientes" width="800" height="800"></span><span class="sticker sticker--y mags__st">Judge a book by its cover</span></div>
-      <div class="mags__copy">
-        <h2 id="mags-title" class="big big--sm">¿Buscas una revista?</h2>
+      <div class="mags__pic"><span class="circ circ--big"><img class="ph" src="assets/photo/revistas.webp" alt="Revistas independientes" width="800" height="800" loading="lazy"></span><span class="sticker sticker--y mags__st">Judge a book by its cover</span></div>
+      <div>
+        <h2 id="mags-title" class="slab sec-h">¿Buscas una revista?</h2>
         <p class="lede">Si no la tenemos, la pedimos. Dinos cuál y te la guardamos en cuanto llegue. Pagas al recogerla.</p>
         <form class="form" id="magform" novalidate>
           <label for="mag-title">Revista o número</label>
@@ -105,20 +104,20 @@
             <div><label for="mag-phone">WhatsApp</label><input id="mag-phone" name="phone" inputmode="tel" required autocomplete="tel" placeholder="600 000 000"></div>
           </div>
           <p class="form__err" id="mag-err" hidden>Rellena la revista, tu nombre y un teléfono para avisarte.</p>
-          <button class="btn btn--red btn--block" type="submit">Pídela · te la guardamos</button>
+          <button class="btn btn--yellow btn--block" type="submit">Pídela · te la guardamos</button>
           <p class="form__ok" id="mag-ok" hidden></p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- QUIÉNES -->
-  <section class="about" aria-labelledby="about-title">
+  <!-- TWO COOL GUYS -->
+  <section class="about" data-nav="white" aria-labelledby="about-title">
     <div class="wrap about__in">
-      <img class="about__img" src="assets/img/kiosk-scene.webp" alt="Ilustración del kiosko Fred con Fran y Eddie en la puerta" width="900" height="640">
-      <div class="about__copy">
-        <h2 id="about-title" class="big big--sm">Two cool guys</h2>
-        <p>Fred son Fran y Eddie. Un kiosko de barrio en el Eixample donde el café va primero y la cultura también. Prensa de toda la vida, revistas raras, sobres de cartas para abrir en la barra y lo último que se ha hecho viral.</p>
+      <img class="about__img" src="assets/img/kiosk-scene.webp" alt="Ilustración del kiosko Fred con Fran y Eddie en la puerta" width="900" height="640" loading="lazy">
+      <div>
+        <h2 id="about-title" class="slab sec-h">Two cool guys</h2>
+        <p class="about__p">Fred son Fran y Eddie. Un kiosko de barrio en el Eixample donde el café va primero y la cultura también. Prensa de toda la vida, revistas raras, sobres de cartas para abrir en la barra y lo último que se ha hecho viral.</p>
         <ul class="claims">
           <li>Coffee first. Culture also.</li>
           <li>We brew opinions (&amp; coffee)</li>
@@ -129,36 +128,39 @@
   </section>
 
   <!-- VISÍTANOS -->
-  <section class="visit" id="visitanos" aria-labelledby="visit-title">
+  <section class="visit" id="visitanos" data-nav="red" aria-labelledby="visit-title">
     <div class="wrap visit__in">
       <div>
-        <h2 id="visit-title" class="big">Pásate<br>por Fred</h2>
+        <h2 id="visit-title" class="slab sec-h">Pásate<br>por Fred</h2>
         <dl class="visit__dl">
           <div><dt>Dónde</dt><dd>Carrer de Nàpols 227<br>L'Eixample · 08013 Barcelona</dd></div>
-          <div><dt>Horario</dt><dd class="todo">[DATO REAL] Horario del kiosko</dd></div>
+          <div><dt>Horario</dt><dd><span class="todo">[DATO REAL] Horario del kiosko</span></dd></div>
           <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/fred.kiosko/" target="_blank" rel="noopener">@fred.kiosko</a></dd></div>
         </dl>
         <a class="btn btn--white" href="https://www.google.com/maps/search/?api=1&amp;query=Carrer+de+N%C3%A0pols+227+Barcelona" target="_blank" rel="noopener">Cómo llegar →</a>
       </div>
-      <img class="visit__obert" src="assets/img/obert.webp" alt="Obert" width="900" height="306">
+      <img class="visit__obert" src="assets/img/obert.webp" alt="Obert" width="900" height="306" loading="lazy">
     </div>
   </section>
 </main>
 
-<footer class="foot">
+<footer class="foot" data-nav="white">
   <div class="wrap foot__in">
-    <img src="assets/img/fred-wordmark.webp" alt="FRED" width="900" height="191">
+    <img src="assets/img/fred-wordmark.webp" alt="FRED" width="900" height="191" loading="lazy">
     <p>Més que un kiosk · Nàpols 227 · Barcelona</p>
-    <p class="foot__small">Demo de la web de Fred. Fotos de producto de ejemplo; precios orientativos.</p>
+    <p class="foot__small">Versión demo: reservas y pagos de prueba, fotos de producto de ejemplo y precios orientativos.</p>
   </div>
 </footer>
 
-<!-- dock carrito -->
+<!-- dock: pedido + barra café gratis -->
 <div class="dock" id="dock" hidden>
-  <button type="button" id="dock-btn"><span class="dock__n" id="dock-n">0</span><span>Ver pedido</span><span class="dock__t" id="dock-t">0,00 €</span></button>
+  <button type="button" id="dock-btn" class="dock__box" aria-label="Ver pedido">
+    <span class="dock__top"><span class="dock__n" id="dock-n">0</span><span>Ver pedido</span><span class="dock__t" id="dock-t">0,00 €</span></span>
+    <span class="dock__prog" id="dock-prog"></span>
+  </button>
 </div>
 
-<!-- hoja (modal inferior) -->
+<!-- hoja -->
 <div class="sheet" id="sheet" hidden>
   <div class="sheet__bg" data-close></div>
   <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" id="panel">
@@ -167,8 +169,9 @@
   </div>
 </div>
 
-<!-- notificación simulada de Óskarys -->
+<div class="toast" id="toast" hidden role="status"></div>
 <div class="noti" id="noti" hidden aria-live="polite"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
 
 <script src="app.js"></script>
 </body>
